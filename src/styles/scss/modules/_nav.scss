@@ -1,0 +1,70 @@
+.nav {
+    --padding-nav: 1.5rem;
+    padding-top: var(--padding-nav);
+    padding-bottom: var(--padding-nav);
+  
+    &__logo {
+      display: block;
+      width: 32px;
+      height: 32px;
+      object-fit: cover;
+    }
+  
+    &__action {
+      display: flex;
+      background-color: transparent;
+      border: 0;
+      font-size: 1.75rem;
+      padding: 0;
+      text-decoration: none;
+      filter: contrast(0.75);
+      cursor: pointer;
+      transition: filter 0.25s;
+  
+      &:hover {
+        filter: contrast(1);
+      }
+  
+      &--close {
+        position: absolute;
+        top: var(--padding-nav);
+        right: var(--padding-container);
+      }
+  
+      &--close,
+      &--menu {
+        @include desktop() {
+          display: none;
+        }
+      }
+    }
+  
+    &__theme {
+      position: relative;
+      @include d-flex-fd-ai-jc-g(row, center, center, 0.375rem);
+      background-color: var(--secondary-theme-color);
+      border: 0;
+      border-radius: var(--primary-border-radius);
+      font-size: 0.875rem;
+      padding: 0.125em 0.25em;
+      cursor: pointer;
+  
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+        background-color: var(--primary-theme-color);
+        box-shadow:
+          0 0 0 0.0625rem var(--primary-shadow-color),
+          0 0 0 0.125rem var(--primary-shadow-color);
+        border-radius: 50%;
+        transition: left 0.25s, background-color 0.25s, box-shadow 0.25s;
+      }
+  
+      &--active::after {
+        left: 50%;
+      }
+    }
+  }
