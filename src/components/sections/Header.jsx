@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { BsList, BsMoon, BsSun, BsXCircle } from "react-icons/bs";
 
 const Header = () => {
   const header = useRef();
@@ -72,10 +73,10 @@ const Header = () => {
                 </NavLink>
               </li>
               <li
-                className="nav__action nav__action--close"
+                className="nav__icon nav__icon--close"
                 onClick={closeMenu}
               >
-                ✖
+                <BsXCircle />
               </li>
             </ul>
           </div>
@@ -85,14 +86,14 @@ const Header = () => {
               ref={navTheme}
               onClick={toggleTheme}
             >
-              <span>🌞</span>
-              <span>🌚</span>
+              <BsMoon />
+              <BsSun />
             </button>
             <button
-              className="nav__action nav__action--menu"
+              className="nav__icon nav__icon--menu"
               onClick={openMenu}
             >
-              🍔
+              <BsList />
             </button>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import Footer from "../components/sections/Footer";
 import Header from "../components/sections/Header";
 
 const PrimaryLayout = () => {
@@ -8,7 +9,7 @@ const PrimaryLayout = () => {
       <main className="main">
         <Outlet />
       </main>
-      <footer style={{ marginTop: 'auto' }}>Joel Menacho</footer>
+      <Footer />
     </>
   );
 };
